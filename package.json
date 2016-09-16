@@ -1,0 +1,30 @@
+{
+  "name": "constellation-nodejs",
+  "description": "Constellation Hub access from a nodejs context",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "private": true,
+  "main": "constellation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gclem/constellation-nodejs.git"
+  },
+  "keywords": [
+    "constellation"
+  ],
+  "author": "Giovanni CLEMENT <giovanni.clement@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/gclem/constellation-nodejs/issues"
+  },
+  "homepage": "https://github.com/gclem/constellation-nodejs#readme",
+  "dependencies": {
+    "jsdom": "^9.5.0",
+    "node-config": "0.0.2"
+  }
+}
