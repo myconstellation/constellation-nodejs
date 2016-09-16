@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/gclem/constellation-nodejs#readme",
   "dependencies": {
-    "jsdom": "^9.5.0",
-    "node-config": "0.0.2"
+    "config": "^1.21.0",
+    "jsdom": "^9.5.0"
   }
 }
