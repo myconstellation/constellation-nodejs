@@ -51,9 +51,14 @@ The config process is managed by the fantastic library [node-config]. You can ma
 ```js
     var constellation = require('constellation-nodejs');
 
+    //// Init and wait until initialization is completed
+    constellation.init().then(function() {
+        //// Init OK 
+    });
+
     //// Listen activity
     constellation.consumerHub.connection.stateChanged(function (change) {
-        if (change.newState === $.signalR.connectionState.connected) {
+        if (change.newState === constellation.$.signalR.connectionState.connected) {
             console.log("Je suis connecté");
         }
     });

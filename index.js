@@ -11,4 +11,4 @@ var ConstellationContext = require('./lib/constellation.js');
 
 //// Checking config before init
 var context = new ConstellationContext();
-module.exports = context.check().init();
+module.exports = context.check();
