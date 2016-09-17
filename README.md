@@ -44,15 +44,20 @@ Create a default.json file in /config directory.
 }
 ```
 
-Config file is automaticaly checked before any initialization. 
+Config file is automaticaly checked before any initialization, if you don't provide parameters to init() method.
 The config process is managed by the fantastic library [node-config]. You can manage your multiples environments with it. 
 
 **Access to the Constellation Hub context**
 ```js
     var constellation = require('constellation-nodejs');
 
-    //// Init and wait until initialization is completed
+    //// Init with config file and wait until initialization is completed
     constellation.init().then(function() {
+        //// Init OK 
+    });
+    
+    //// Or init with parameters
+    constellation.init("server", "accesskey", "applicationName", "sdkVersionNotNecessary").then(function() {
         //// Init OK 
     });
 
