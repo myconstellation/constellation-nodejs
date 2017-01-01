@@ -1,6 +1,6 @@
 # Changelog
 
-#1.1.0
+#1.2.0
 * Full Refactor of the event base hub
 * Event emitter linked
 * Full action flow in Promises
