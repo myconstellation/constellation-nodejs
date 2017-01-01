@@ -1,15 +1,15 @@
 {
-  /** 
+  /**
   * Constellation Configuration
   **/
   "constellation": {
     //// Constellation url
     "url" : "",
-    //// Constellation Hub Access key 
+    //// Constellation Hub Access key
     "accessKey" : "",
     //// Your application name
     "applicationName" : "Test API JS",
     ///// Sdk Version
-    "sdkVersion" : "1.8.0"
+    "sdkVersion" : "1.8.1"
   }
 }
