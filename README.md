@@ -1,10 +1,6 @@
 # constellation-nodejs
 Constellation hub access from a Nodejs context
 
-# Important
-
-This repo is no longer maintained. It's now an official Constellation NodeJS Package accessible from official repository : https://github.com/myconstellation/constellation-nodejs or NPM.
-
 # Introduction
 
 [Constellation] is a platform to orchestrate and interconnect your programs and devices. With constellation, you can easily manage all of your devices / sensors / switch and more, interconnect its and create intelligence between them.
@@ -76,7 +72,7 @@ The config process is managed by the fantastic library [node-config]. You can ma
 ** You can also configure the context through init parameters (no config file needed).
 ```javascript
 this.init = function(url, accessKey, applicationName, sdkVersion)
-``
+```
 
 # Contributions
 
