@@ -1,9 +1,13 @@
 # constellation-nodejs
 Constellation hub access from a Nodejs context
 
+# Important
+
+This repo is no longer maintained. It's now an official Constellation NodeJS Package accessible from official repository : https://github.com/myconstellation/constellation-nodejs or NPM.
+
 # Introduction
 
-[Constellation] is an oriented message bus for domotic use. With constellation, you can easily manage all of your devices / sensors / switch and more, interconnect its and create intelligence between them.
+[Constellation] is a platform to orchestrate and interconnect your programs and devices. With constellation, you can easily manage all of your devices / sensors / switch and more, interconnect its and create intelligence between them.
 You can read more on [Constellation] here : http://www.myconstellation.io/
 
 This package was created, at the beginning on my needs to access Constellation Hub from my NodeJS home context.
@@ -39,7 +43,7 @@ Create a default.json file in /config directory.
     //// Your application name
     "applicationName" : "Test Node JS",
     ///// Sdk Version
-    "sdkVersion" : "1.8.0"
+    "sdkVersion" : "1.8.1"
   }
 }
 ```
@@ -48,7 +52,7 @@ Config file is automaticaly checked before any initialization, if you don't prov
 The config process is managed by the fantastic library [node-config]. You can manage your multiples environments with it.
 
 **Access to the Constellation Hub context**
-```js
+```javascript
     var constellation = require('constellation-nodejs');
 
 	//// Init with config file and wait until initialization is completed
@@ -67,9 +71,13 @@ The config process is managed by the fantastic library [node-config]. You can ma
 				console.log(so.Value.Temperature);
 			});
 		});
-
 ```
+
+** You can also configure the context through init parameters (no config file needed).
+```javascript
+this.init = function(url, accessKey, applicationName, sdkVersion)
+``
 
 # Contributions
 
-Feel free to ask or contribute directly on this repo.
+Now it's on https://github.com/myconstellation/constellation-nodejs

@@ -13,16 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gclem/constellation-nodejs.git"
+    "url": "git+https://github.com/myconstellation/constellation-nodejs.git"
   },
   "keywords": [
     "constellation"
   ],
   "author": "Giovanni CLEMENT <giovanni.clement@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gclem/constellation-nodejs/issues"
+    "url": "https://github.com/myconstellation/constellation-nodejs/issues"
   },
-  "homepage": "https://github.com/gclem/constellation-nodejs#readme",
+  "homepage": "https://github.com/myconstellation/constellation-nodejs#readme",
   "dependencies": {
     "config": "^1.21.0",
     "jsdom": "^9.5.0"
