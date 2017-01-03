@@ -1,5 +1,8 @@
 # Changelog
 
+#1.2.1
+* Migrate to official repository Constellation
+
 #1.2.0
 * Full Refactor of the event base hub
 * Event emitter linked
