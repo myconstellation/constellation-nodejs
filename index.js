@@ -14,21 +14,21 @@ var ConstellationFactory = function(url, accessKey, applicationName, sdkVersion)
     this.Sentinel = function(sentinelName) {
         return ctx.init(url, accessKey, applicationName, sdkVersion)
             .then(() => {
-                return ctx.getPackageHub(url, accessKey, applicationName, sentinelName);
+                return ctx.getPackageHub(sentinelName);
             });
     }
 
     this.Controller = function() {
         return ctx.init(url, accessKey, applicationName, sdkVersion)
             .then(() => {
-                return ctx.getControllerHub(url, accessKey, applicationName, sentinelName);
+                return ctx.getControllerHub();
             });
     }
 
     this.Consumer = function() {
         return ctx.init(url, accessKey, applicationName, sdkVersion)
             .then(() => {
-                return ctx.getConsumerHub(url, accessKey, applicationName);
+                return ctx.getConsumerHub();
             });
     }
 }
