@@ -13,6 +13,10 @@ Any performances problem are noticed when I perftest it.
 
 Don't hesitate to ask for an add, or just contribute.
 
+# CHANGELOG : New version 2.0.0
+* *2.0.0* now manage virtual entities (Sentinel and packages).
+* Now you can push state object and emulate Sentinel from a Javascript Context.
+* You can use the old initialization style *1.2.x* with this *2.0.0*
 
 # Quick start
 
