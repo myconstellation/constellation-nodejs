@@ -72,7 +72,7 @@ The config process is managed by the fantastic library [node-config]. You can ma
 			return ctx.connect();
 		});
 
-	//// Create a Sentinel Hub
+	//// Create a Consumer Hub
 	c.Consumer()
 		.then((ctx) => {
 			ctx.on('connected', () => { 
