@@ -57,10 +57,10 @@ The config process is managed by the fantastic library [node-config]. You can ma
     var ConstellationHub = require('constellation-nodejs');
 
 	//// With config file
-	var context = new ConstellationHub();
+	var c = new ConstellationHub();
 
 	//// Without configuration file 
-	var context = new ConstellationHub(rootUrl, token, "AmbientSensor", "1.8.2"); //// AmbientSensor represents the name of the application (package)
+	var c = new ConstellationHub(rootUrl, token, "AmbientSensor", "1.8.2"); //// AmbientSensor represents the name of the application (package)
 
 	//// Create a Controller Hub
 	c.Controller()
