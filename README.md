@@ -25,6 +25,7 @@ $ npm install constellation-nodejs
 **Create configuration file in config directory from the sample attached**
 
 Create a default.json file in /config directory.
+Configuration file isn't necessary. You can instanciate the Hub from parameters.
 
 ```js
 {
@@ -39,39 +40,56 @@ Create a default.json file in /config directory.
     //// Your application name
     "applicationName" : "Test Node JS",
     ///// Sdk Version
-    "sdkVersion" : "1.8.1"
+    "sdkVersion" : "1.8.2"
   }
 }
 ```
 
-Config file is automaticaly checked before any initialization, if you don't provide parameters to init() method.
+Config file is automaticaly checked before any initialization, *if you don't provide parameters to init() method*.
 The config process is managed by the fantastic library [node-config]. You can manage your multiples environments with it.
 
 **Access to the Constellation Hub context**
 ```javascript
-    var constellation = require('constellation-nodejs');
+    var ConstellationHub = require('constellation-nodejs');
 
-	//// Init with config file and wait until initialization is completed
-	constellation.init()
-		.then(function(hub) {
-			//// Init OK
-			console.log("Init OK.");
-			return hub;
-		}).then((hub) => {
-			//// connect
-			hub.on('connected', () => { console.log("Connected to constellation hub.");})
-			return hub.connect();
-		}).then((hub) => {
-			//// subscribe
-			hub.client.registerStateObjectLink("R2D2", "Vera", "Flood Sensor (temperature)", "*", function (so) {
-				console.log(so.Value.Temperature);
+	//// With config file
+	var context = new ConstellationHub();
+
+	//// Without configuration file 
+	var context = new ConstellationHub(rootUrl, token, "AmbientSensor", "1.8.2"); //// AmbientSensor represents the name of the application (package)
+
+	//// Create a Controller Hub
+	c.Controller()
+		.then((ctx) => {
+			ctx.on('connected', () => { 
+				console.log("CONNECTED"); 
+				//ctx.hub.server.writelog("SentinelPI", "{ 'test' : 'ok' } "); 
 			});
+			return ctx.connect();
 		});
-```
 
-** You can also configure the context through init parameters (no config file needed).
-```javascript
-this.init = function(url, accessKey, applicationName, sdkVersion)
+	//// Create a Sentinel Hub
+	c.Consumer()
+		.then((ctx) => {
+			ctx.on('connected', () => { 
+				console.log("CONNECTED"); 
+				//// subscribe
+				ctx.hub.client.registerStateObjectLink("R2D2", "Vera", "Flood Sensor (temperature)", "*", function (so) {
+					console.log(so.Value.Temperature);
+				});
+			});
+			return ctx.connect();
+		});
+
+	//// Create a Sentinel Hub
+	c.Sentinel("Corulag")
+		.then((ctx) => {
+			ctx.on('connected', () => { 
+				console.log("CONNECTED"); 
+				ctx.hub.server.writelog("SentinelPI", "{ 'test' : 'ok' } "); 
+			});
+			return ctx.connect();
+		});
 ```
 
 # Contributions

@@ -9,6 +9,28 @@
 
 var ConstellationContext = require('./lib/constellation.js');
 
-//// Checking config before init
-var context = new ConstellationContext();
-module.exports = context;
+var ConstellationFactory = function(url, accessKey, applicationName, sdkVersion) {
+    var ctx = new ConstellationContext();
+    this.Sentinel = function(sentinelName) {
+        return ctx.init(url, accessKey, applicationName, sdkVersion)
+            .then(() => {
+                return ctx.getPackageHub(url, accessKey, applicationName, sentinelName);
+            });
+    }
+
+    this.Controller = function() {
+        return ctx.init(url, accessKey, applicationName, sdkVersion)
+            .then(() => {
+                return ctx.getControllerHub(url, accessKey, applicationName, sentinelName);
+            });
+    }
+
+    this.Consumer = function() {
+        return ctx.init(url, accessKey, applicationName, sdkVersion)
+            .then(() => {
+                return ctx.getConsumerHub(url, accessKey, applicationName);
+            });
+    }
+}
+
+module.exports = ConstellationFactory;

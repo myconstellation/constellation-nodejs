@@ -1,5 +1,9 @@
 # Changelog
 
+#2.0.0
+* Refactoring Hub generation
+* Now manage Package Hub access with virtual and sentinel entities
+
 #1.2.1
 * Migrate to official repository Constellation
 

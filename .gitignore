@@ -43,3 +43,6 @@ config/default.json
 # Local mocks
 mocks/*
 default.json
+
+# Specs
+specs/*
